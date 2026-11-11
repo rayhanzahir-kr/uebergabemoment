@@ -1,0 +1,71 @@
+/* Shared, flow-based layout: controls never cover the customer's greeting. */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { display: block; width: 100%; min-height: 100%; height: auto; overflow-x: hidden; overflow-y: auto; }
+body.form-page, body.setup-page { width: 100%; height: auto; min-height: 100vh; min-height: 100svh; overflow-x: hidden; overflow-y: auto; padding: 28px clamp(18px, 4vw, 70px); gap: 28px; background-color: #050609; color: white; isolation: isolate; font-family: Inter, 'Open Sans', Arial, sans-serif; }
+body.form-page { background-image: radial-gradient(ellipse at top, #212630, #050609 65%); }
+.brand-header { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 22px; position: relative; z-index: 3; }
+.brand-header img { width: clamp(100px, 14vw, 175px); height: auto; }
+.brand-header span { font-size: clamp(16px, 2vw, 28px); color: #ced1d5; }
+.form-page .content { width: min(100%, 540px); max-width: 540px; margin: clamp(10px, 4vh, 60px) 0 36px; gap: 8px; z-index: 3; }
+.form-page label { font-size: clamp(17px, 2vw, 25px); margin: 12px 0 0; }
+.form-page input, .form-page select { width: 100%; max-width: none; min-height: 52px; padding: 13px 18px; font-size: clamp(17px, 2vw, 23px); margin: 4px 0; border: 1px solid #a9aeb6; border-radius: 14px; }
+.form-page button { width: 100%; max-width: none; font-size: 21px; min-height: 52px; margin-top: 16px; }
+.form-page .theme-description { min-height: 0; line-height: 1.5; }
+.setup-page #video-bg { z-index: -2; filter: brightness(.4); object-fit: cover; }
+.setup-page::before { content: ''; position: fixed; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(5,6,9,.9), rgba(5,6,9,.32)); pointer-events: none; }
+.setup-page .content { width: 100%; max-width: 850px; margin-top: clamp(15px, 4vh, 70px); padding: 0 6px; z-index: 3; }
+.setup-page .greeting { font-size: clamp(28px, 4vw, 60px); overflow-wrap: anywhere; }
+.setup-page .thank-you { font-size: clamp(16px, 2vw, 26px); margin: 16px 0; }
+.setup-page .message { font-size: clamp(23px, 3vw, 43px); }
+.form-page .music-panel { position: relative; inset: auto; width: min(100%, 640px); padding: clamp(18px, 3vw, 28px); border: 1px solid #737a85; background: rgba(11,14,20,.87); z-index: 3; }
+.music-panel select { width: 100%; }
+.music-panel select option { background: #10141a; color: white; }
+.music-panel .theme-select-label { margin-top: 20px; }
+.music-panel .theme-description, .music-status { min-height: 18px; line-height: 1.5; }
+.music-panel .volume-row label { font-size: 13px; margin: 0; font-weight: 400; }
+.music-panel #animationPreview { width: 100%; font-size: 15px; height: auto; min-height: 42px; margin-top: 14px; border-width: 1px; border-radius: 12px; text-transform: none; }
+.setup-page .button-container { position: relative; bottom: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; z-index: 3; }
+.setup-page .button-container button { width: auto; height: auto; min-height: 48px; font-size: clamp(17px, 2vw, 22px); }
+.setup-page .logo-container { position: relative; bottom: auto; z-index: 3; padding: 10px 0 20px; }
+.setup-page .logo-container img { width: 130px; }
+body.show-page { background: #000; color: white; isolation: isolate; }
+.show-page #fullscreen-video { z-index: 0; inset: 0; object-fit: contain; }
+.show-page #startOverlay { padding: 24px; overflow-y: auto; }
+.start-card { width: min(100%, 640px); display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.start-card .brand-logo { width: min(42vw, 520px); max-width: 100%; height: auto; }
+.start-card h1 { margin: 0; font-size: clamp(28px, 4vw, 52px); }
+.show-page #startShowButton { max-width: 100%; font-size: clamp(18px, 3vw, 28px); }
+/* Große, lesbare Begrüßung für digitale Hochformat-Displays. */
+.show-page #startOverlay { padding: clamp(20px, 4vw, 64px); }
+.show-page #startOverlay .start-card { width: min(100%, 1200px); gap: clamp(20px, 2.4vh, 48px); }
+.show-page #startOverlay .greeting { font-size: clamp(32px, 6.8vw, 96px); line-height: 1.15; }
+.show-page #startOverlay .thank-you { font-size: clamp(20px, 3.6vw, 48px); line-height: 1.4; }
+.show-page #startOverlay .message { font-size: clamp(28px, 5.4vw, 76px); line-height: 1.25; overflow-wrap: anywhere; }
+.show-page #startShowButton { font-size: clamp(22px, 3.8vw, 48px); padding: 18px 36px; }
+.show-page #startOverlay .secondary-button { font-size: clamp(17px, 2.4vw, 32px); }
+.secondary-button { padding: 12px 20px; min-height: 44px; border: 1px solid #969eaa; color: #fff; background: #141820; border-radius: 30px; cursor: pointer; font-size: 16px; }
+.show-page #audioNotice { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: min(90%, 680px); z-index: 20; background: #21160e; padding: 12px 16px; border: 1px solid #c58b4f; border-radius: 12px; color: #ffe0b3; text-align: center; }
+.show-page #audioNotice:empty { display: none; }
+.show-page #playPauseButton { z-index: 4; opacity: .85; color: #fff; background: rgba(0,0,0,.75); border: 1px solid #aaa; }
+.show-page #feedbackButton { z-index: 4; max-width: 90%; }
+.show-page #restartLink { position: fixed; right: 18px; bottom: 20px; z-index: 4; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--theme-accent); outline-offset: 5px; }
+#playPauseButton:focus-visible { outline: 3px solid var(--theme-accent); outline-offset: 5px; }
+button:disabled { cursor: wait; opacity: .6; }
+.setup-page button, .form-page button { border-color: var(--theme-accent); }
+@media (max-width: 700px) { .music-row { flex-direction: row; } .music-panel .preview-button { width: auto; min-width: 102px; } .setup-page .content { margin-top: 12px; } }
+@media (max-width: 360px) { .music-row { flex-direction: column; } .music-panel .preview-button { width: 100%; } .brand-header span { font-size: 15px; } }
+@media (prefers-reduced-motion: reduce) { .setup-page #video-bg { display: none; } }
+
+/* Music settings belong to the preparation form. */
+.form-page .music-panel { margin-top: 20px; }
+.form-page .music-row { align-items: center; }
+.form-page .music-panel label { margin-top: 0; }
+.form-page .music-panel .preview-button { flex-shrink: 0; margin: 0; }
+.form-page .volume-row input { width: 0; min-width: 0; min-height: 44px; padding: 0; border: 0; margin: 0; }
+.form-page .volume-row span { white-space: nowrap; }
+/* Give the customer greeting room now that preparation is on page one. */
+body.setup-page { justify-content: center; gap: clamp(28px, 6vh, 72px); }
+.setup-page .content { margin-top: 0; }

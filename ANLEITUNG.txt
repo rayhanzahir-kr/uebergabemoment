@@ -1,0 +1,53 @@
+ÜBERGABEMOMENT – FAHRZEUGÜBERGABE AUF DEM HOCHFORMAT-DISPLAY
+=========================================================
+
+BEDIENUNG
+1. index.html im Browser öffnen.
+2. Anrede und Namen eingeben, Animationsstil und Musik auswählen.
+3. Mit „Vorschau“ die Musik prüfen und die Lautstärke einstellen.
+4. „Weiter zur Begrüßung“ wählen und den Browser im Vollbild anzeigen.
+5. Die persönliche Begrüßung auf Seite 2 zeigen. „Show starten“ spielt
+   das Übergabevideo mit der ausgewählten Musik ab.
+6. „Pause“ und „Weiter“ steuern die Wiedergabe. Falls die Musik nicht
+   geladen werden kann, „Mit Originalton starten“ wählen.
+7. Am Ende über „Ihre Meinung zählt!“ das Bewertungsformular öffnen
+   oder über „Neue Show“ die nächste Übergabe vorbereiten.
+
+GESTALTUNG
+Die Stile „Luxuriös & elegant“, „Filmreif & dramatisch“ und
+„Modern & dynamisch“ ergänzen die vorhandenen Videos durch Animationen.
+Die Videodateien werden dabei nicht verändert. Die Systemeinstellung
+für reduzierte Bewegung wird berücksichtigt.
+Logo, Begrüßung und Abholhinweis auf Seite 2 sind für die Lesbarkeit
+auf Hochformat-Displays vergrößert. Lange Namen werden umgebrochen.
+Bei kleinen Bildschirmen lässt sich die Begrüßungsseite scrollen.
+Das Übergabevideo wird vollständig und ohne Zuschnitt angezeigt.
+
+DATEIEN UND ANPASSUNGEN
+Logo: assets/images/Logo.png
+Begrüßungsvideo: assets/videos/your-background-video1.mp4
+Übergabevideo: assets/videos/your-background-video2.mp4
+Musik: assets/audio/music1.mp3 bis music6.mp3
+Musikauswahl: SHOW_MUSIC in assets/js/music-picker.js
+Schrift- und Logogrößen: assets/css/show-layout.css
+Bewertungsformular: goToFeedback() in page2.html
+
+AKTUALISIERUNG
+Vor Änderungen die vorhandene Installation sichern. HTML-Dateien und
+den Ordner assets/ auf den Webserver übertragen und dabei die relativen
+Pfade sowie die Groß- und Kleinschreibung beibehalten. Nach dem Upload
+den Browser mit Strg+F5 neu laden. Bei reinen Code-Updates vorhandene
+Medien auf dem Server erhalten.
+
+GESPEICHERTE EINSTELLUNGEN
+Der Browser speichert Anrede, Namen, Musik, Lautstärke und Animationsstil
+lokal, soweit dies erlaubt ist. Name und Anrede werden zusätzlich im
+URL-Fragment übergeben, die Musik im URL-Parameter. Animationsstil und
+Lautstärke benötigen für die Speicherung den lokalen Browserspeicher.
+Vor der nächsten Übergabe den Kundennamen ersetzen oder entfernen.
+
+PRÜFUNG AM DISPLAY
+Vor dem Kundeneinsatz Begrüßung, lange Namen, alle drei Animationsstile,
+sechs Musikstücke, Lautstärke, Pause/Weiter und das Bewertungsformular
+prüfen. Das Übergabevideo bis zum Ende abspielen und die Tonwiedergabe
+auf dem tatsächlichen Display kontrollieren.

@@ -1,0 +1,12 @@
+# Lokale Arbeitsdateien und Werkzeuge
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.video-tools/
+output/
+tmp/
+node_modules/
+*.log
+.env
+.env.*

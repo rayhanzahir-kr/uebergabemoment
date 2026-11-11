@@ -1,0 +1,78 @@
+.music-panel {
+  position: fixed;
+  top: 2.5vh;
+  right: 2.5vw;
+  z-index: 10;
+  width: min(360px, 42vw);
+  padding: 14px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.music-panel label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: clamp(15px, 1.8vw, 21px);
+  font-weight: 700;
+}
+
+.music-row { display: flex; gap: 8px; }
+
+.music-panel select {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 12px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+}
+
+.music-panel .preview-button {
+  width: auto;
+  min-width: 104px;
+  height: 44px;
+  margin: 0;
+  padding: 0 14px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.music-panel .preview-button:hover { background: #fff; color: #000; }
+
+.music-status {
+  min-height: 18px;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+}
+
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 9px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.volume-row input { flex: 1; accent-color: #fff; }
+
+@media (max-width: 700px) {
+  .music-panel { top: 1.5vh; left: 4vw; right: 4vw; width: auto; }
+  .music-row { flex-direction: column; }
+  .music-panel .preview-button { width: 100%; }
+}

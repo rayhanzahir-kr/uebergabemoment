@@ -1,0 +1,155 @@
+<!-- Seite 1 -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Übergabemoment – Show vorbereiten</title>
+    <link rel="stylesheet" href="assets/css/music-picker.css">
+    <link rel="stylesheet" href="assets/css/animation-themes.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            background: url('assets/images/your-background-image.jpg') no-repeat top center fixed;
+            background-size: cover;
+            background-color: black;
+        }
+
+        .content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90vw;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 10vh;
+        }
+
+        label {
+            font-size: 4vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        select, input {
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            font-size: 4vw;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            border: 3px solid white;
+            background: black;
+            color: white;
+            border-radius: 25px;
+            margin: 10px 0;
+            max-width: 400px;
+        }
+
+        select option {
+            background: black;
+            color: white;
+        }
+
+        button {
+            width: 60%;
+            max-width: 400px;
+            height: auto;
+            padding: 12px;
+            font-size: 4vw;
+            text-transform: uppercase;
+            background: black;
+            border: 3px solid white;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/show-layout.css">
+</head>
+<body class="form-page">
+    <header class="brand-header">
+        <img class="brand-logo" src="assets/images/Logo.png" alt="Autohaus DIL">
+        <span>Traumhafte Mercedes</span>
+    </header>
+    <div class="content">
+        <label for="Anrede">Anrede</label>
+        <select id="Anrede">
+            <option value="Herr">Herr</option>
+            <option value="Frau">Frau</option>
+            <option value="Familie">Familie</option>
+        </select>
+
+        <label for="Name">Name</label>
+        <input type="text" id="Name" placeholder="Name">
+
+        <label for="animationThemeSelect">Animationsstil</label>
+        <select id="animationThemeSelect">
+            <option value="luxury">Luxuriös &amp; elegant</option>
+            <option value="cinematic">Filmreif &amp; dramatisch</option>
+            <option value="modern">Modern &amp; dynamisch</option>
+        </select>
+        <p id="animationThemeDescription" class="theme-description" aria-live="polite"></p>
+
+    <div class="music-panel" aria-label="Musikauswahl">
+        <label for="musicSelect">Musik für die Show</label>
+        <div class="music-row">
+            <select id="musicSelect">
+                <option value="music1.mp3">Musik 1</option>
+                <option value="music2.mp3">Musik 2</option>
+                <option value="music3.mp3">Musik 3</option>
+                <option value="music4.mp3">Musik 4</option>
+                <option value="music5.mp3">Musik 5</option>
+                <option value="music6.mp3">Musik 6</option>
+            </select>
+            <button id="musicPreview" class="preview-button" type="button">▶ Vorschau</button>
+        </div>
+        <div class="volume-row">
+            <label for="musicVolume">Lautstärke</label>
+            <input id="musicVolume" type="range" min="0" max="100" value="70">
+            <span id="musicVolumeValue">70%</span>
+        </div>
+        <div id="musicStatus" class="music-status" aria-live="polite"></div>
+    </div>
+
+        <button onclick="saveData()">Weiter zur Begrüßung</button>
+    </div>
+
+    <script src="assets/js/animation-themes.js?v=greeting-3"></script>
+    <script src="assets/js/music-picker.js?v=fade6-refresh-20261029"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('Anrede').value = readShowSetting('Anrede') || 'Herr';
+            document.getElementById('Name').value = readShowSetting('Name') || '';
+        });
+
+        function saveData() {
+            writeShowSetting('showMusic', document.getElementById('musicSelect').value);
+            writeShowSetting('Anrede', document.getElementById('Anrede').value);
+            writeShowSetting('Name', document.getElementById('Name').value.trim());
+            navigateWithAnimation('page2.html');
+        }
+    </script>
+</body>
+</html>
