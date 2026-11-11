@@ -6,6 +6,16 @@ A personalized vehicle handover experience for portrait digital signage.
 
 Suggested repository name: `uebergabemoment`.
 
+## Screenshots
+
+The application in its 1080 × 1920 portrait layout, using a fictional customer name and the existing Autohaus DIL branding. Click an image to view it at full size.
+
+| Staff preparation | Personalized welcome | Handover show |
+| :---: | :---: | :---: |
+| [![Preparation screen with customer name, animation style, music selection, and volume controls](docs/screenshots/preparation.png)](docs/screenshots/preparation.png) | [![Welcome screen for Familie Mustermann with the enlarged dealership logo and greeting](docs/screenshots/welcome.png)](docs/screenshots/welcome.png) | [![Portrait handover video paused during playback](docs/screenshots/handover-show.png)](docs/screenshots/handover-show.png) |
+
+Set up the handover, welcome the customer, and play the presentation—all in one browser workflow.
+
 ## Features
 
 - German interface for staff and customers.
